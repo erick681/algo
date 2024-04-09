@@ -1,12 +1,16 @@
 import sys
-def ola(nome):
-    print("ola\n ",nome)
-    c = 1
-    c += 1 
-    if c >= 3 :
+import pdb
+
+def ola(nome, c=1):
+    print("Olá\n", nome)
+    pdb.set_trace()
+    if c == 3:
         sys.exit()
-    ola(nome)
-    tchau()
-def tchau():
-    return f"tchau {nome}"
-ola("maria")
+    c += 1
+    ola(nome, c)
+    tchau(nome)
+
+def tchau(nome):
+    print(f"Tchau {nome}")
+
+ola("Maria")
